@@ -39,8 +39,10 @@ public class MainActivity extends AppCompatActivity {
                 priview.setText("7");
             } else if (view.getId() == R.id.eight_btnID) {
                 priview.setText("8");
-            } else {
+            } else if (view.getId() == R.id.nine_btnID) {
                 priview.setText("9");
+            } else {
+                priview.setText(".");
             }
         }
         else{
@@ -62,8 +64,10 @@ public class MainActivity extends AppCompatActivity {
                 priview.setText(PrimaryValue+"7");
             } else if (view.getId() == R.id.eight_btnID) {
                 priview.setText(PrimaryValue+"8");
-            } else {
+            } else if (view.getId()==R.id.nine_btnID){
                 priview.setText(PrimaryValue+"9");
+            } else {
+                priview.setText(PrimaryValue+".");
             }
         }
     }
@@ -79,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         else if(view.getId()==R.id.multiplyID){
             operator="*";
         }
-        else{
+        else {
             operator="/";
         }
         secondaryview.setText(""+primaryvalue+" "+operator);
@@ -99,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
         else if(operator.equals("*")){
             result=num1 * num2;
         }
-        else{
+        else {
             result=num1 / num2;
         }
         secondaryview.setText(num1+operator+num2+" ");
@@ -113,5 +117,52 @@ public class MainActivity extends AppCompatActivity {
         num1=0.0;
         result=0.0;
         operator="";
+    }
+
+    public void clearPriView(View view) {
+        secondaryview.getText().toString();
+        priview.setText("0");
+    }
+
+    public void OnebyX(View view) {
+        String primaryValue=priview.getText().toString();
+        num1=Double.parseDouble(primaryValue);
+        if(primaryValue.equals("0")){
+            secondaryview.setText("1/("+primaryValue+")");
+            priview.setText(primaryValue);
+        }
+        else{
+            secondaryview.setText("1/("+primaryValue+")");
+            result=1/num1;
+            priview.setText(""+result);
+        }
+    }
+
+    public void squer(View view) {
+        String primaryValue=priview.getText().toString();
+        num1=Double.parseDouble(primaryValue);
+        if(primaryValue.equals("0")){
+            secondaryview.setText("sqr("+primaryValue+")");
+            priview.setText(primaryValue);
+        }
+        else{
+            secondaryview.setText("sqr("+primaryValue+")");
+            result=num1*num1;
+            priview.setText(""+result);
+        }
+    }
+
+    public void backFunction(View view) {
+
+        String primaryValue=priview.getText().toString();
+        if(primaryValue.length() != 0){
+            primaryValue = primaryValue.substring(0,primaryValue.length() -1);
+            priview.setText(primaryValue);
+        }
+    }
+
+    public void percent(View view) {
+        double num = Double.parseDouble(priview.getText().toString())/100;
+        priview.setText(num+"");
     }
 }

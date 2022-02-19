@@ -94,20 +94,23 @@
         android:weightSum="4">
 
         <Button
-            android:id="@+id/perbuttonID"
+            android:id="@+id/perbutton_btnID"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:onClick="percent"
             android:text="%"
-            android:textSize="35dp" />
+            android:textSize="35dp"
+            tools:ignore="OnClick" />
 
         <Button
-            android:id="@+id/CEbuttonID"
+            android:id="@+id/CEbutton_btnID"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:onClick="clearPriView"
             android:text="CE"
-            android:textSize="35dp" />
+            android:textSize="35dp"/>
 
         <Button
             android:id="@+id/CbuttonID"
@@ -122,6 +125,7 @@
             android:id="@+id/backbuttonID"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:onClick="backFunction"
             android:layout_weight="1"
             android:background="@drawable/back"/>
 
@@ -139,6 +143,7 @@
             android:id="@+id/oneByXID"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:onClick="OnebyX"
             android:layout_weight="1"
             android:background="@drawable/screenshot2"/>
 
@@ -146,6 +151,7 @@
             android:id="@+id/XsqurID"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:onClick="squer"
             android:layout_weight="1"
             android:background="@drawable/screenshot3" />
 
@@ -266,7 +272,7 @@
             android:layout_weight="1"
             android:text="1"
             android:onClick="numberFunction"
-            android:textSize="20dp" />
+            android:textSize="35dp" />
 
         <Button
             android:id="@+id/two_btnID"
@@ -319,10 +325,11 @@
             android:textSize="35dp" />
 
         <Button
-            android:id="@+id/pointID"
+            android:id="@+id/point_btnID"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:onClick="numberFunction"
             android:text="."
             android:textSize="35dp" />
 
